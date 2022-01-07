@@ -1,6 +1,6 @@
 <?php
 
-namespace Scrirock\PhpPdoSingleton\Model;
+namespace Scrirock\PhpPdoSingleton;
 
 use PDO;
 use PDOException;

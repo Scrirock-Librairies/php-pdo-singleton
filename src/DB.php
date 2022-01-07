@@ -8,11 +8,7 @@ use PDOException;
 class DB {
     private static ?PDO $representativeDb = null;
 
-    public function __construct(){
-        $user = '';
-        $password = '';
-        $database = '';
-
+    public function __construct($user, $password, $database){
         try {
             self::$representativeDb = new PDO("mysql:host=localhost;dbname=$database;charset=utf8", $user, $password);
             self::$representativeDb->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -38,11 +34,14 @@ class DB {
 
     /**
      * Return only one PDO  instance through the whole project.
+     * @param $user
+     * @param $password
+     * @param $database
      * @return PDO|null
      */
-    public static function getRepresentative(): ?PDO {
+    public static function getRepresentative($user, $password, $database): ?PDO {
         if(null === self::$representativeDb) {
-            new self();
+            new self($user, $password, $database);
         }
         return self::$representativeDb;
     }

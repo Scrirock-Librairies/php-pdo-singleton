@@ -1,0 +1,19 @@
+{
+    "name": "scrirock/php-pdo-singleton",
+    "description": "Easy way to connect MySql using PDO",
+    "type": "library",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Scrirock\\PhpPdoSingleton\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Scrirock",
+            "email": "Scrirock@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
